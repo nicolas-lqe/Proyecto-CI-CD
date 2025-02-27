@@ -20,7 +20,8 @@ add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(
 apt-get update
 
 # Instalar Docker
-apt-get install -y docker-ce
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
 
 # Instalar Docker Compose
 DOCKER_COMPOSE_VERSION=1.29.2  # Cambia a la versión deseada
