@@ -12,5 +12,5 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
     // Mostrar mensaje en la consola una vez que el servidor esté funcionando
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+    console.log(`Servidor corriendo en http://192.168.1.18:${PORT}`);
 });
