@@ -12,7 +12,7 @@ RUN npm install
 # Copiar el resto del código fuente de la aplicación
 COPY . .
 
-EXPOSE 3000
+EXPOSE 3001
 
 # Arranca la aplicación Node.js
 CMD ["node", "app.js"]
