@@ -1,1 +1,1 @@
-# Proyecto CI/CD utilizando Jenkins y Docker.
+# Proyecto CI/CD utilizando Jenkins para automatizar y Docker para contenizar.
