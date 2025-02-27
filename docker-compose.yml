@@ -7,7 +7,7 @@ services:
     privileged: true  
     user: root 
     ports:
-      - "8081:8081"  
+      - "9090:8080"  
       - "50000:50000"  
     container_name: jenkins_docker
     volumes:
