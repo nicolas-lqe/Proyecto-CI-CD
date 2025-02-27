@@ -3,7 +3,7 @@ const express = require('express');
 
 const app = express();
 
-const PORT = 3000;
+const PORT = 3001;
 
 // Esta función se ejecutará cuando alguien visite la URL raíz
 app.get('/', (req, res) => {
