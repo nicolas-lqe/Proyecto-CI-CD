@@ -1,0 +1,38 @@
+version: '3'  # Versión de Docker Compose que estamos usando
+
+services:
+  # Definición del servicio de Jenkins
+  jenkins:
+    image: jenkins/jenkins:lts  
+    privileged: true  
+    user: root 
+    ports:
+      - "8080:8080"  
+      - "50000:50000"  
+    container_name: jenkins  
+    volumes:
+      - jenkins_home:/var/jenkins_home  # Volumen para persistir datos de Jenkins
+      - /var/run/docker.sock:/var/run/docker.sock  
+    networks:
+      - app-network  
+
+  # Definición del servicio de la aplicación Node.js
+  app:
+    build:
+      context: . 
+      dockerfile: Dockerfile  
+    ports:
+      - "3000:3000"  
+    container_name: nodejs-app  # Nombre del contenedor
+    depends_on:
+      - jenkins  # Dependencia: iniciar después de que Jenkins esté activo
+    networks:
+      - app-network  
+
+# Definición de redes
+networks:
+  app-network:  # Red personalizada para comunicación entre servicios
+
+# Definición de volúmenes persistentes
+volumes:
+  jenkins_home:  # Volumen para almacenar datos de Jenkins

@@ -1,20 +1,18 @@
-# Usar una imagen base de Node.js
+# Usar una imagen base de Node.js versión 14
 FROM node:14
 
-# Crear un directorio de aplicación
 WORKDIR /usr/src/app
 
-# Copiar package.json y package-lock.json
+# Copiar los archivos de dependencias
+# Se copian primero para aprovechar la caché de capas de Docker
 COPY package*.json ./
 
-# Instalar dependencias
 RUN npm install
 
-# Copiar el resto del código
+# Copiar el resto del código fuente de la aplicación
 COPY . .
 
-# Exponer el puerto
 EXPOSE 3000
 
-# Comando para ejecutar la aplicación
+# Arranca la aplicación Node.js
 CMD ["node", "app.js"]

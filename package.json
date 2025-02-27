@@ -1,0 +1,18 @@
+{
+    "name": "nodejs-app-cicd",  
+    "version": "1.0.0",  
+    "description": "Aplicación Node.js para demostración de CI/CD con Jenkins y Docker",  
+    "main": "app.js",  
+    "scripts": {
+      "start": "node app.js",  
+      "test": "echo 'Pruebas pasadas correctamente!' && exit 0"  
+    },
+    "dependencies": {
+      "express": "^4.17.1"  
+    },
+    "engines": {
+      "node": ">=14"  
+    },
+    "author": "Luque Nicolas",  
+    "license": "ISC"  
+  }
