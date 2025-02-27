@@ -9,7 +9,7 @@ services:
     ports:
       - "8080:8080"  
       - "50000:50000"  
-    container_name: jenkins_in_docker
+    container_name: jenkins2
     volumes:
       - jenkins_home:/var/jenkins_home  # Volumen para persistir datos de Jenkins
       - /var/run/docker.sock:/var/run/docker.sock  
