@@ -1,5 +1,5 @@
 pipeline {
-    agent any  // Ejecutar este pipeline en cualquier agente disponible
+    agent any  //
 
     stages {
         // Primera etapa: Construcción de la aplicación
@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                     // Construir la imagen Docker del servicio 'app' definido en docker-compose.yml
-                    // Esto ejecuta el proceso definido en el Dockerfile
+                    
                     sh 'docker-compose build app'
                 }
             }
@@ -28,8 +28,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // Iniciar el servicio 'app' en modo demonio (background)
-                    // -d ejecuta el contenedor en segundo plano
+                   
                     sh 'docker-compose up -d app'
                 }
             }
