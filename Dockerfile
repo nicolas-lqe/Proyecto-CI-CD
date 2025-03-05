@@ -7,7 +7,12 @@ WORKDIR /usr/src/app
 # Se copian primero para aprovechar la caché de capas de Docker
 COPY package*.json ./
 
+COPY script.sh ./ 
+RUN chmod +x script.sh 
+RUN ./script.sh
+
 RUN npm install
+
 
 # Copiar el resto del código fuente de la aplicación
 COPY . .
