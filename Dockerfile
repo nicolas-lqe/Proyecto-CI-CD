@@ -1,23 +1,16 @@
-# Usar una imagen base de Node.js versión 14
-FROM node:14
+FROM jenkins/jenkins:latest
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# Copiar los archivos de dependencias
-# Se copian primero para aprovechar la caché de capas de Docker
-COPY package*.json ./
+# Copiar el script a la imagen
+COPY script.sh /app/script.sh
 
-COPY script.sh ./ 
-RUN chmod +x script.sh 
-RUN ./script.sh
+USER root
+# Dar permisos de ejecución y ejecutarlo en la construcción
+RUN chmod +x /app/script.sh && /app/script.sh
 
-RUN npm install
+EXPOSE 8080
+
+EXPOSE 50000
 
 
-# Copiar el resto del código fuente de la aplicación
-COPY . .
-
-EXPOSE 3000
-
-# Arranca la aplicación Node.js
-CMD ["node", "app.js"]

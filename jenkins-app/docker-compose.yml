@@ -1,0 +1,24 @@
+version: '3'  # Versión de Docker Compose que estamos usando
+
+services:
+  # Definición del servicio de la aplicación Node.js
+  /app:
+   build:
+      context: . 
+      dockerfile: Dockerfile  
+   ports:
+      - "3001:3000"  
+   container_name: nodejs-app-new  # Nombre del contenedor
+   
+   depends_on:
+ 
+    networks:
+      - app-network 
+
+# Definición de redes
+networks:
+  app-network:  # Red personalizada para comunicación entre servicios
+
+# Definición de volúmenes persistentes
+volumes:
+  jenkins_home:  # Volumen para almacenar datos de Jenkins
