@@ -2,7 +2,7 @@ version: '3'  # Versión de Docker Compose que estamos usando
 
 services:
   # Definición del servicio de la aplicación Node.js
-  /app:
+  app:
    build:
       context: . 
       dockerfile: Dockerfile  
