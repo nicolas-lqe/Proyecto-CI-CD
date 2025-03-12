@@ -8,7 +8,7 @@ pipeline {
                 script {
                     // Construir la imagen Docker del servicio 'app' definido en docker-compose.yml
                     
-                    sh 'docker-compose build app'
+                    sh 'docker compose build app'
                 }
             }
         }
@@ -19,7 +19,7 @@ pipeline {
                 script {
                     // Ejecutar el comando 'npm test' dentro del contenedor de la aplicación
                     // --rm elimina el contenedor después de completar el comando
-                    sh 'docker-compose run --rm app npm test'
+                    sh 'docker compose run --rm app npm test'
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                    
-                    sh 'docker-compose up -d app'
+                    sh 'docker compose up -d app'
                 }
             }
         }
