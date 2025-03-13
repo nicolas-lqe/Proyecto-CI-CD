@@ -8,7 +8,7 @@ pipeline {
                 script {
                     // Construir la imagen Docker del servicio 'app' definido en docker-compose.yml
                     
-                    sh 'docker build -t . '
+                    sh 'docker build -t app:latest .'
                 }
             }
         }
