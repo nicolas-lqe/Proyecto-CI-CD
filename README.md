@@ -1,2 +1,1 @@
-# Proyecto CI/CD utilizando Jenkins para el despliegue de pipeline y automatización y Docker para
-# contenizar la app de Node js.
+Proyecto de CI y CD utilizando Docker para Node.js, Jenkins para el monitoreo y Docker compose para despliegue de la app 
